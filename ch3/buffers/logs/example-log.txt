@@ -1,0 +1,354 @@
+
+Tue Jul 30 15:11:20 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Aug  2 10:44:50 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Aug  6 10:24:59 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Sun Aug 18 22:43:40 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Aug 20 17:12:05 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Aug 26 23:12:17 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Sep  3 10:30:06 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Sep 10 10:41:24 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Sep 17 02:19:56 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Sep 24 01:17:07 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Oct  1 10:59:29 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Oct  7 23:10:12 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Oct 14 13:44:41 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Oct 21 10:52:28 WEST 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Oct 28 10:34:57 WET 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Nov  4 11:49:26 WET 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Nov 11 10:29:00 WET 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Sun Nov 17 17:56:28 WET 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Sun Nov 24 23:06:33 WET 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Dec  3 14:02:01 CET 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Sun Dec  8 23:24:43 WET 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Dec 16 10:39:20 WET 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Dec 27 16:47:59 WET 2019
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Thu Jan  2 01:07:11 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Jan  6 10:08:51 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Jan 13 10:07:47 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Jan 20 11:12:04 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Jan 27 10:04:23 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Jan 31 14:08:20 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Feb  7 10:11:16 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Feb 14 10:31:35 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Feb 21 11:48:51 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Feb 28 11:56:39 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Mar  6 10:35:29 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Mar 13 12:52:40 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Mar 20 10:59:01 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Mar 27 12:04:04 WET 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Apr  3 11:03:26 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Apr  7 09:30:24 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Apr 14 09:18:41 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Apr 21 10:39:04 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Apr 28 10:15:40 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon May  4 09:00:13 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon May 11 09:32:01 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon May 18 09:00:29 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Sun May 24 23:45:43 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Jun  1 08:59:43 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Jun  8 09:03:27 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Mon Jun 15 09:01:04 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Jun 19 09:31:38 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Jun 26 12:15:51 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Jul  3 10:15:51 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Jul 10 10:14:21 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Tue Jul 21 10:37:26 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Fri Jul 24 10:45:24 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Thu Jul 30 21:49:04 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Thu Aug  6 21:12:19 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Thu Aug 13 22:31:26 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
+
+Thu Aug 20 22:14:31 WEST 2020
+
+Rebuilding whatis database:
+
+-- End of weekly output --
