@@ -1,13 +1,11 @@
 import { serve } from "https://deno.land/std/http/server.ts";
-import { Museum } from "../controllers/museum.ts";
+import { MuseumController } from "../museums/index.ts";
 
 interface CreateServerDependencies {
   configuration: {
     port: number
   },
-  museum: {
-    getAll: () => Promise<Museum[]>
-  }
+  museum: MuseumController
 }
 
 export async function createServer({
