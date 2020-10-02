@@ -1,11 +1,11 @@
-import { createServer } from './web/createServer.ts';
+import { createServer } from './web/index.ts';
 import {
   Controller as MuseumController,
   Repository as MuseumRepository,
 } from './museums/index.ts';
 
 const museumRepository = new MuseumRepository();
-const museumController = new MuseumController({ museumRepository });
+const museumController = new MuseumController({ museumRepository })
 
 museumRepository.storage.set('fixture-1', {
   id: 'fixture-1',
