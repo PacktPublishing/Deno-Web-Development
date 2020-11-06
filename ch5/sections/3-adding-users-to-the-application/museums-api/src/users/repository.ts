@@ -1,20 +1,13 @@
-import { User, UserRepository } from "./types.ts";
-import { generateSalt, hashWithSalt } from "./util.ts";
+import { CreateUser, User, UserRepository } from "./types.ts";
 
 export class Repository implements UserRepository {
   storage = new Map<string, User>();
-  async create(username: string, password: string) {
-    const salt = generateSalt();
-    const user = {
-      createdAt: new Date(),
-      username,
-      hash: hashWithSalt(password, salt),
-      salt
-    }
 
-    this.storage.set(username, user);
+  async create(user: CreateUser) {
+    const userWithCreatedAt = { ...user, createdAt: new Date() }
+    this.storage.set(user.username, { ...userWithCreatedAt });
 
-    return user;
+    return userWithCreatedAt;
   }
 
   async exists(username: string) {

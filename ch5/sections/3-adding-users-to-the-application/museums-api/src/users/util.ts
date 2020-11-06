@@ -9,7 +9,6 @@ export const hashWithSalt = (password: string, salt: string) => {
   return hash;
 }
 
-
 export const generateSalt = () => {
   const arr = new Uint8Array(64);
   crypto.getRandomValues(arr)
