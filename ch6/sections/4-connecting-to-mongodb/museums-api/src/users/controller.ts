@@ -1,6 +1,6 @@
 import { userToDto } from "./adapter.ts";
 import { RegisterPayload, UserController, UserRepository, LoginPayload, User } from "./types.ts";
-import { hashWithSalt } from "./util.ts";
+import { generateSalt, hashWithSalt } from "./util.ts";
 import { AuthRepository } from "../deps.ts";
 
 interface ControllerDependencies {
@@ -27,14 +27,24 @@ export class Controller implements UserController {
     return Promise.reject(false);
   }
 
+  private async getHashedUser(username: string, password: string) {
+    const salt = generateSalt();
+    const user = {
+      username,
+      hash: hashWithSalt(password, salt),
+      salt
+    }
+
+    return user;
+  }
+
   public async register(payload: RegisterPayload) {
     if (await this.userRepository.exists(payload.username)) {
       return Promise.reject('Username already exists');
     }
 
     const createdUser = await this.userRepository.create(
-      payload.username,
-      payload.password
+      await this.getHashedUser(payload.username, payload.password)
     );
 
     return userToDto(createdUser);

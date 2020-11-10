@@ -1,4 +1,4 @@
-import * as MongoDb from './database/mongoDb.ts';
+import { MongoClient, Database } from './deps.ts';
 import { createServer } from './web/index.ts';
 import {
   Controller as MuseumController,
@@ -12,11 +12,9 @@ import {
 } from './users/index.ts';
 import { AuthRepository, Algorithm } from './deps.ts';
 
-const db = MongoDb.connect({
-  username: 'username',
-  password: 'password',
-  host: 'host'
-});
+const client = new MongoClient();
+client.connectWithUri("mongodb+srv://<connection URI>");
+const db = client.database("getting-started-with-deno");
 
 const museumRepository = new MuseumRepository();
 const museumController = new MuseumController({ museumRepository })
@@ -30,12 +28,7 @@ const authRepository = new AuthRepository({
   configuration: authConfiguration
 });
 
-const userRepository = new UserRepository({
-  configuration: {
-    collectionName: 'users'
-  },
-  storage: db
-});
+const userRepository = new UserRepository({ storage: db });
 const userController = new UserController({ userRepository, authRepository });
 
 museumRepository.storage.set('fixture-1', {

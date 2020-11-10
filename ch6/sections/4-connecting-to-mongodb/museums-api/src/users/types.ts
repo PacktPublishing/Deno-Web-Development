@@ -8,8 +8,10 @@ export type User = {
 
 export type UserDto = Pick<User, 'createdAt' | 'username'>
 
+export type CreateUser = Omit<User, 'createdAt'>
+
 export interface UserRepository {
-  create: (username: string, password: string) => Promise<User>
+  create: (user: CreateUser) => Promise<User>
   exists: (username: string) => Promise<boolean>
   getByUsername: (username: string) => Promise<User>
 }

@@ -1,19 +1,29 @@
-import { makeJwt, setExpiration, Jose, Payload } from "./deps.ts";
+import { makeJwt, setExpiration, Jose, Payload, Algorithm } from "./deps.ts";
 import { AuthRepository, Configuration } from './types.ts';
 
-type RepositoryDependencies = { configuration: Configuration }
+export type RepositoryDependencies = { configuration: Configuration }
 
+const defaultConfiguration: Configuration = {
+  algorithm: 'HS512' as Algorithm,
+  key: 'SET-YOUR-KEY',
+  tokenExpirationInSeconds: 120,
+}
+
+/**
+ * Generates, gets and stores (in-memory) jwt tokens for a userId
+ */
 export class Repository implements AuthRepository {
-  /**
-   * Generates, gets and stores (in-memory) jwt tokens for a userId
-   */
   private storage = new Map<string, string>();
   private configuration: Configuration;
 
   /**
    * @param dependencies object with Repository dependencies
    */
-  constructor(dependencies: RepositoryDependencies) {
+  constructor(dependencies: RepositoryDependencies = { configuration: defaultConfiguration }) {
+    if (dependencies.configuration.key === defaultConfiguration.key) {
+      throw new Error('You need to set the jwt key');
+    }
+
     this.configuration = dependencies.configuration
   }
 
