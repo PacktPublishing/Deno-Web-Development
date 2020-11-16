@@ -1,13 +1,13 @@
 import { makeJwt, setExpiration, Jose, Payload, Algorithm } from "./deps.ts";
-import { AuthRepository, Configuration } from './types.ts';
+import { AuthRepository, Configuration } from "./types.ts";
 
-export type RepositoryDependencies = { configuration: Configuration }
+export type RepositoryDependencies = { configuration: Configuration };
 
 const defaultConfiguration: Configuration = {
-  algorithm: 'HS512' as Algorithm,
-  key: 'SET-YOUR-KEY',
+  algorithm: "HS512" as Algorithm,
+  key: "SET-YOUR-KEY",
   tokenExpirationInSeconds: 120,
-}
+};
 
 /**
  * Generates, gets and stores (in-memory) jwt tokens for a userId
@@ -19,12 +19,16 @@ export class Repository implements AuthRepository {
   /**
    * @param dependencies object with Repository dependencies
    */
-  constructor(dependencies: RepositoryDependencies = { configuration: defaultConfiguration }) {
+  constructor(
+    dependencies: RepositoryDependencies = {
+      configuration: defaultConfiguration,
+    },
+  ) {
     if (dependencies.configuration.key === defaultConfiguration.key) {
-      throw new Error('You need to set the jwt key');
+      throw new Error("You need to set the jwt key");
     }
 
-    this.configuration = dependencies.configuration
+    this.configuration = dependencies.configuration;
   }
 
   /**
@@ -33,10 +37,10 @@ export class Repository implements AuthRepository {
    * @param userId the userId to retrieve the token for
    */
   async getToken(userId: string) {
-    const token = this.storage.get(userId)
+    const token = this.storage.get(userId);
 
     if (!token) {
-      return Promise.reject('Could not get token for that userId');
+      return Promise.reject("Could not get token for that userId");
     }
 
     return token;
@@ -51,14 +55,16 @@ export class Repository implements AuthRepository {
     const payload: Payload = {
       iss: "museums",
       exp: setExpiration(this.configuration.tokenExpirationInSeconds),
-      user: userId
+      user: userId,
     };
     const header: Jose = {
       alg: this.configuration.algorithm,
       typ: "JWT",
     };
-    const token = await makeJwt({ key: this.configuration.key, header, payload })
+    const token = await makeJwt(
+      { key: this.configuration.key, header, payload },
+    );
 
     return token;
-  };
+  }
 }

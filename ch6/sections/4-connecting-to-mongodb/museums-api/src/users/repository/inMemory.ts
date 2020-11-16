@@ -4,8 +4,8 @@ export class Repository implements UserRepository {
   storage = new Map<string, User>();
 
   async create(user: CreateUser) {
-    const userWithCreatedAt = { ...user, createdAt: new Date() }
-    this.storage.set(user.username, {... userWithCreatedAt });
+    const userWithCreatedAt = { ...user, createdAt: new Date() };
+    this.storage.set(user.username, { ...userWithCreatedAt });
 
     return userWithCreatedAt;
   }
@@ -17,6 +17,6 @@ export class Repository implements UserRepository {
   async getByUsername(username: string) {
     const user = this.storage.get(username);
 
-    return user || Promise.reject(new Error('User not found'));
+    return user || Promise.reject(new Error("User not found"));
   }
 }

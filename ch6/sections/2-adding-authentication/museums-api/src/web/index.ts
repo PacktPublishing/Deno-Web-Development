@@ -4,18 +4,18 @@ import { UserController } from "../users/types.ts";
 
 interface CreateServerDependencies {
   configuration: {
-    port: number
-  },
-  museum: MuseumController,
-  user: UserController
+    port: number;
+  };
+  museum: MuseumController;
+  user: UserController;
 }
 
 export async function createServer({
   configuration: {
-    port
+    port,
   },
   museum,
-  user
+  user,
 }: CreateServerDependencies) {
   const app = new Application();
 
@@ -31,24 +31,27 @@ export async function createServer({
     ctx.response.headers.set("X-Response-Time", `${ms}ms`);
   });
 
-  app.addEventListener('listen', e => {
-    console.log(`Application running at http://${e.hostname || 'localhost'}:${port}`)
-  })
-
-  app.addEventListener('error', e => {
-    console.log('An error occurred', e.message);
-  })
-
-  const apiRouter = new Router({ prefix: '/api' })
-
-  apiRouter.get('/museums', async (ctx) => {
-    ctx.response.body = {
-      museums: await museum.getAll()
-    }
+  app.addEventListener("listen", (e) => {
+    console.log(
+      `Application running at http://${e.hostname || "localhost"}:${port}`,
+    );
   });
 
-  apiRouter.post('/users/register', async (ctx) => {
-    const { username, password } = await ctx.request.body({ type: 'json' }).value;
+  app.addEventListener("error", (e) => {
+    console.log("An error occurred", e.message);
+  });
+
+  const apiRouter = new Router({ prefix: "/api" });
+
+  apiRouter.get("/museums", async (ctx) => {
+    ctx.response.body = {
+      museums: await museum.getAll(),
+    };
+  });
+
+  apiRouter.post("/users/register", async (ctx) => {
+    const { username, password } = await ctx.request.body({ type: "json" })
+      .value;
 
     if (!username && !password) {
       ctx.response.status = 400;
@@ -62,7 +65,7 @@ export async function createServer({
     ctx.response.body = { user: createdUser };
   });
 
-  apiRouter.post('/login', async (ctx) => {
+  apiRouter.post("/login", async (ctx) => {
     const { username, password } = await ctx.request.body().value;
     try {
       const { user: loginUser } = await user.login({ username, password });
@@ -72,7 +75,7 @@ export async function createServer({
       ctx.response.body = { message: e.message };
       ctx.response.status = 400;
     }
-  })
+  });
 
   app.use(apiRouter.routes());
   app.use(apiRouter.allowedMethods());

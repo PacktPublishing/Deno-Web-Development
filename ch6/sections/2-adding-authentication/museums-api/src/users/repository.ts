@@ -9,8 +9,8 @@ export class Repository implements UserRepository {
       createdAt: new Date(),
       username,
       hash: hashWithSalt(password, salt),
-      salt
-    }
+      salt,
+    };
 
     this.storage.set(username, user);
 
@@ -24,6 +24,6 @@ export class Repository implements UserRepository {
   async getByUsername(username: string) {
     const user = this.storage.get(username);
 
-    return user || Promise.reject(new Error('User not found'));
+    return user || Promise.reject(new Error("User not found"));
   }
 }

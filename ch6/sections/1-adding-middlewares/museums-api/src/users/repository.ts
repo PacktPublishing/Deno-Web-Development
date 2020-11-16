@@ -9,8 +9,8 @@ export class Repository implements UserRepository {
       createdAt: new Date(),
       username,
       hash: hashWithSalt(password, salt),
-      salt
-    }
+      salt,
+    };
 
     this.storage.set(username, user);
 

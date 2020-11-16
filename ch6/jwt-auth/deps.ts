@@ -3,5 +3,5 @@ export {
   setExpiration,
   Jose,
   Payload,
-  Algorithm
+  Algorithm,
 } from "https://deno.land/x/djwt@v1.2/create.ts";

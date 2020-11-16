@@ -1,20 +1,20 @@
 import { CreateUser, User, UserRepository } from "../types.ts";
-import { Database, Collection } from '../../deps.ts';
+import { Database, Collection } from "../../deps.ts";
 
 interface RepositoryDependencies {
-  storage: Database,
+  storage: Database;
 }
 
 export class Repository implements UserRepository {
-  storage: Collection<User>
+  storage: Collection<User>;
 
   constructor({ storage }: RepositoryDependencies) {
-    this.storage = storage.collection<User>('users');
+    this.storage = storage.collection<User>("users");
   }
 
   async create(user: CreateUser) {
-    const userWithCreatedAt = { ...user, createdAt: new Date() }
-    this.storage.insertOne({ ...user })
+    const userWithCreatedAt = { ...user, createdAt: new Date() };
+    this.storage.insertOne({ ...user });
 
     return userWithCreatedAt;
   }
@@ -26,6 +26,6 @@ export class Repository implements UserRepository {
   async getByUsername(username: string) {
     const user = await this.storage.findOne({ username });
 
-    return user || Promise.reject(new Error('User not found'));
+    return user || Promise.reject(new Error("User not found"));
   }
 }

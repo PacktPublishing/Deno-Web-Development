@@ -1,14 +1,14 @@
 import { Algorithm } from "./deps.ts";
 
-export { Algorithm }
+export { Algorithm };
 
 export type Configuration = {
-  key: string,
-  algorithm: Algorithm,
-  tokenExpirationInSeconds: number,
-}
+  key: string;
+  algorithm: Algorithm;
+  tokenExpirationInSeconds: number;
+};
 
 export interface AuthRepository {
-  getToken: (username: string) => Promise<string>
-  generateToken: (username: string) => Promise<string>
+  getToken: (username: string) => Promise<string>;
+  generateToken: (username: string) => Promise<string>;
 }

@@ -1,14 +1,14 @@
-import { MuseumController, MuseumRepository } from './types.ts';
+import { MuseumController, MuseumRepository } from "./types.ts";
 
 interface ControllerDependencies {
-  museumRepository: MuseumRepository
+  museumRepository: MuseumRepository;
 }
 
 export class Controller implements MuseumController {
-  museumRepository: MuseumRepository
+  museumRepository: MuseumRepository;
 
   constructor({ museumRepository }: ControllerDependencies) {
-    this.museumRepository = museumRepository
+    this.museumRepository = museumRepository;
   }
 
   async getAll() {
