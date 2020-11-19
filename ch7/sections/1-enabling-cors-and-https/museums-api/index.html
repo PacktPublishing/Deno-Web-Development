@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test CORS</title>
+  </head>
+  <body>
+    <div id="status"></div>
+    <script type="module">
+      fetch("http://localhost:8080/api/users/register", {
+        body: JSON.stringify({ username: "abcd", password: "abcd" }),
+        method: "POST",
+      })
+        .then((r) => {
+          document.getElementById("status").innerHTML = "WORKING ✅";
+        })
+        .catch((r) => {
+          document.getElementById("status").innerHTML = "NOT WORKING 🔴";
+        });
+    </script>
+  </body>
+</html>
