@@ -62,20 +62,20 @@ export async function createServer({
 
   const apiRouter = new Router({ prefix: "/api" });
 
-  apiRouter.get("/client.js", async (ctx) => {
-    const [diagnostics, bundle] = await Deno.bundle(
-      "./src/web/client.ts",
-    ) as string[];
+apiRouter.get("/client.js", async (ctx) => {
+  const [diagnostics, bundle] = await Deno.bundle(
+    "./src/web/client.ts",
+  ) as string[];
 
-    if (!diagnostics) {
-      ctx.response.type = "application/javascript";
-      ctx.response.body = bundle;
+  if (!diagnostics) {
+    ctx.response.type = "application/javascript";
+    ctx.response.body = bundle;
 
-      return;
-    }
+    return;
+  }
 
-    console.error(diagnostics);
-  });
+  console.error(diagnostics);
+});
 
   const authenticated = jwtMiddleware(
     { algorithm: authorization.algorithm, key: authorization.key },

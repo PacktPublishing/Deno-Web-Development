@@ -15,7 +15,6 @@ import { load as loadConfiguration } from "./config/index.ts";
 const config = await loadConfiguration();
 
 const client = new MongoClient();
-// pw: Hdxmy68qbWCrRlqR
 client.connectWithUri(
   `mongodb+srv://${config.mongoDb.username}:${config.mongoDb.password}@${config.mongoDb.clusterURI}`,
 );
