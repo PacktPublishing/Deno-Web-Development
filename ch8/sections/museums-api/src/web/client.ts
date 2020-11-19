@@ -8,7 +8,9 @@ interface Config {
 export function getClient(config: Config) {
   let token: string | null = null;
   return {
-    register: ({ username, password }: RegisterPayload): Promise<UserDto> => {
+    register: (
+      { username, password }: RegisterPayload,
+    ): Promise<{ user: UserDto }> => {
       return fetch(
         `${config.baseURL}/api/users/register`,
         {
@@ -34,6 +36,7 @@ export function getClient(config: Config) {
         throw response.json();
       })
         .then((response) => {
+          console.log("set the token with", response.token);
           token = response.token;
 
           return response;
@@ -43,11 +46,17 @@ export function getClient(config: Config) {
       const authenticatedHeaders = new Headers();
       authenticatedHeaders.set("authorization", `Bearer ${token}`);
       return fetch(
-        `${config.baseURL}/api/users/register`,
+        `${config.baseURL}/api/museums`,
         {
           headers: authenticatedHeaders,
         },
-      ).then((r) => r.json());
+      ).then(async (response) => {
+        if (response.status < 300) {
+          return response.json();
+        }
+
+        throw response.text();
+      });
     },
   };
 }

@@ -15,7 +15,6 @@ import { load as loadConfiguration } from "./config/index.ts";
 const config = await loadConfiguration();
 
 const client = new MongoClient();
-// pw: Hdxmy68qbWCrRlqR
 client.connectWithUri(
   `mongodb+srv://${config.mongoDb.username}:${config.mongoDb.password}@${config.mongoDb.clusterURI}`,
 );
@@ -29,14 +28,12 @@ const authConfiguration = {
   key: config.jwt.key,
   tokenExpirationInSeconds: config.jwt.expirationTime,
 };
-const authRepository = new AuthRepository({
-  configuration: authConfiguration,
-});
+const authRepository = new AuthRepository({ configuration: authConfiguration });
 
 const userRepository = new UserRepository({ storage: db });
 const userController = new UserController({ userRepository, authRepository });
 
-museumRepository.storage.set("fixture-1", {
+museumRepository.loadFixtures([{
   id: "fixture-1",
   name: "Most beautiful museum in the world",
   description: "One I really like",
@@ -44,7 +41,7 @@ museumRepository.storage.set("fixture-1", {
     lat: "12345",
     lng: "54321",
   },
-});
+}]);
 
 createServer({
   configuration: {
