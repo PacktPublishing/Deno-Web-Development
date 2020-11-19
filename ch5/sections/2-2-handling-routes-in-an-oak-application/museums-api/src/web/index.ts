@@ -5,34 +5,35 @@ import { Router } from "https://deno.land/x/oak@v6.3.0/router.ts";
 
 interface CreateServerDependencies {
   configuration: {
-    port: number
-  },
-  museum: MuseumController
+    port: number;
+  };
+  museum: MuseumController;
 }
 
 export async function createServer({
   configuration: {
-    port
+    port,
   },
-  museum
+  museum,
 }: CreateServerDependencies) {
-
   const app = new Application();
 
-  app.addEventListener('listen', e => {
-    console.log(`Application running at http://${e.hostname || 'localhost'}:${port}`)
-  })
+  app.addEventListener("listen", (e) => {
+    console.log(
+      `Application running at http://${e.hostname || "localhost"}:${port}`,
+    );
+  });
 
-  app.addEventListener('error', e => {
-    console.log('An error occurred', e.message);
-  })
+  app.addEventListener("error", (e) => {
+    console.log("An error occurred", e.message);
+  });
 
-  const apiRouter = new Router({ prefix: '/api' })
+  const apiRouter = new Router({ prefix: "/api" });
 
-  apiRouter.get('/museums', async (ctx) => {
+  apiRouter.get("/museums", async (ctx) => {
     ctx.response.body = {
-      museums: await museum.getAll()
-    }
+      museums: await museum.getAll(),
+    };
   });
 
   app.use(apiRouter.routes());

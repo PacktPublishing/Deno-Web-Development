@@ -4,27 +4,28 @@ import { Application } from "../deps.ts";
 
 interface CreateServerDependencies {
   configuration: {
-    port: number
-  },
-  museum: MuseumController
+    port: number;
+  };
+  museum: MuseumController;
 }
 
 export async function createServer({
   configuration: {
-    port
+    port,
   },
-  museum
+  museum,
 }: CreateServerDependencies) {
-
   const app = new Application();
 
-  app.addEventListener('listen', e => {
-    console.log(`Application running at http://${e.hostname || 'localhost'}:${port}`)
-  })
+  app.addEventListener("listen", (e) => {
+    console.log(
+      `Application running at http://${e.hostname || "localhost"}:${port}`,
+    );
+  });
 
-  app.addEventListener('error', e => {
-    console.log('An error occurred', e.message);
-  })
+  app.addEventListener("error", (e) => {
+    console.log("An error occurred", e.message);
+  });
 
   app.use((ctx) => {
     ctx.response.body = "Hello World!";

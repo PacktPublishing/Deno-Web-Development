@@ -1,20 +1,19 @@
-
 export type User = {
-  username: string,
-  hash: string,
-  salt: string,
-  createdAt: Date
-}
+  username: string;
+  hash: string;
+  salt: string;
+  createdAt: Date;
+};
 
-export type UserDto = Pick<User, 'createdAt' | 'username'>
-export type CreateUser = Omit<User, 'createdAt'>
+export type UserDto = Pick<User, "createdAt" | "username">;
+export type CreateUser = Omit<User, "createdAt">;
 
 export interface UserRepository {
-  create: (user: CreateUser) => Promise<User>
-  exists: (username: string) => Promise<boolean>
+  create: (user: CreateUser) => Promise<User>;
+  exists: (username: string) => Promise<boolean>;
 }
 
-export type RegisterPayload = { username: string, password: string };
+export type RegisterPayload = { username: string; password: string };
 export interface UserController {
-  register: (payload: RegisterPayload) => Promise<UserDto>
+  register: (payload: RegisterPayload) => Promise<UserDto>;
 }
