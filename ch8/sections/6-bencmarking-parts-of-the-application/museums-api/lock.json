@@ -1,0 +1,5 @@
+{
+  "https://deno.land/std@0.71.0/_util/assert.ts": "e1f76e77c5ccb5a8e0dbbbe6cce3a56d2556c8cb5a9a8802fc9565af72462149",
+  "https://deno.land/std@0.71.0/_util/deep_assign.ts": "f2004e050a9149495109e4f1a3ea1b148c5c470cec39efb6b4d07314d35f29c2",
+  "https://deno.land/std@0.71.0/testing/bench.ts": "8136f2d5e6d2121e2b986fc6d80dbfccbf188c999da541059d1ef7b4010a0183"
+}

@@ -5,6 +5,9 @@ interface Config {
   baseURL: string;
 }
 
+const jsonHeaders = new Headers();
+jsonHeaders.set("content-type", "application/json");
+
 export function getClient(config: Config) {
   let token: string | null = null;
   return {
@@ -14,6 +17,7 @@ export function getClient(config: Config) {
         {
           body: JSON.stringify({ username, password }),
           method: "POST",
+          headers: jsonHeaders,
         },
       ).then((r) => r.json());
     },
@@ -24,6 +28,7 @@ export function getClient(config: Config) {
         `${config.baseURL}/api/login`,
         {
           body: JSON.stringify({ username, password }),
+          headers: jsonHeaders,
           method: "POST",
         },
       ).then((response) => {
