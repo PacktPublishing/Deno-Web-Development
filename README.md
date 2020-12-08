@@ -1,4 +1,4 @@
-# Getting started with Deno
+# Getting started with Deno (https://deno.land/)
 
 Published by PacktPub
 Authored by Alexandre Portela dos Santos
@@ -30,7 +30,7 @@ A true believer that great software only happens through collaboration, ownershi
 
 # Index
 
-The book is composed of 10 chapters and 3 main sections. The sections are: Introduction to Deno, Building an application, Testing and Deploying.
+The book is composed of 10 chapters and 3 main sections. The sections are: Introduction to Deno, Building an application, Testing and Deploying. The chapters list and direct link to code is available below.
 
 1. What is deno?
 2. The toolchain (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch2/)
@@ -42,3 +42,5 @@ The book is composed of 10 chapters and 3 main sections. The sections are: Intro
 8. Testing - Unit and integration (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch8/)
 9. Deploying a Deno application (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch9/)
 10. What's next? (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch10/)
+
+Chapter that have multiple iterations of the same application have inside a `sections` folder with copies of the application at each state. It should be possible to have access to the code at a certain point in chapter.
