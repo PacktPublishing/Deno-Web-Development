@@ -1,7 +1,7 @@
 import { MuseumController } from "../museums/index.ts";
 import { Application, Router, jwtMiddleware } from "../deps.ts";
 import { UserController } from "../users/types.ts";
-import { oakCors, Algorithm } from "../deps.ts";
+import { Algorithm, oakCors } from "../deps.ts";
 
 interface CreateServerDependencies {
   configuration: {
@@ -19,6 +19,7 @@ interface CreateServerDependencies {
   user: UserController;
 }
 
+export { getClient } from "./client.ts";
 export async function createServer({
   configuration: {
     port,
@@ -128,5 +129,16 @@ export async function createServer({
     ctx.response.body = "Hello World!";
   });
 
-  return { app };
+  const controller = new AbortController();
+  const { signal } = controller;
+
+  app.listen({
+    port,
+    secure,
+    keyFile,
+    certFile,
+    signal,
+  });
+
+  return { app, controller };
 }
