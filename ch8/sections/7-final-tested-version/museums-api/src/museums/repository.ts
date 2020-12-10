@@ -10,10 +10,4 @@ export class Repository implements MuseumRepository {
   async getAll() {
     return [...this.storage.values()];
   }
-
-  async loadFixtures(museums: Museum[]) {
-    museums.forEach((m) => {
-      this.storage.set(m.id, m);
-    });
-  }
 }

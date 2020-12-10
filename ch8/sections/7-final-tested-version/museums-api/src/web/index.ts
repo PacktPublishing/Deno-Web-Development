@@ -19,6 +19,7 @@ interface CreateServerDependencies {
   user: UserController;
 }
 
+export { getClient } from "./client.ts";
 export async function createServer({
   configuration: {
     port,
@@ -128,5 +129,16 @@ export async function createServer({
     ctx.response.body = "Hello World!";
   });
 
-  return { app };
+  const controller = new AbortController();
+  const { signal } = controller;
+
+  app.listen({
+    port,
+    secure,
+    keyFile,
+    certFile,
+    signal,
+  });
+
+  return { app, controller };
 }
