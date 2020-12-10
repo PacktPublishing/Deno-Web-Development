@@ -4,4 +4,4 @@ export {
   Jose,
   Payload,
   Algorithm,
-} from "https://deno.land/x/djwt@v1.2/create.ts";
+} from "https://deno.land/x/djwt@v1.7/create.ts";
