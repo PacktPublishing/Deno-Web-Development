@@ -24,13 +24,19 @@ type Configuration = {
   };
 };
 
-export async function load(env = "dev"): Promise<Configuration> {
+export async function load(
+  env = "dev",
+): Promise<Configuration> {
   const configuration = parse(
     await Deno.readTextFile(`./config.${env}.yaml`),
   ) as Configuration;
 
   return {
     ...configuration,
+    web: {
+      ...configuration.web,
+      port: Number(Deno.env.get("PORT")) || configuration.web.port,
+    },
     mongoDb: {
       ...configuration.mongoDb,
       username: Deno.env.get("MONGODB_USERNAME") || "deno-api",

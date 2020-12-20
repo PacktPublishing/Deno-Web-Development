@@ -1,0 +1,14 @@
+web:
+  port: 9001
+cors:
+  allowedOrigins:
+    - http://localhost:3000
+https:
+  key: ./key.pem
+  certificate: ./certificate.pem
+jwt:
+  algorithm: HS512
+  expirationTime: 120
+mongoDb:
+  clusterURI: deno-cluster.wtit0.mongodb.net/?retryWrites=true&w=majority
+  database: getting-started-with-deno

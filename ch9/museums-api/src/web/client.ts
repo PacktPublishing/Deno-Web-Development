@@ -11,7 +11,9 @@ jsonHeaders.set("content-type", "application/json");
 export function getClient(config: Config) {
   let token: string | null = null;
   return {
-    register: ({ username, password }: RegisterPayload): Promise<UserDto> => {
+    register: (
+      { username, password }: RegisterPayload,
+    ): Promise<{ user: UserDto }> => {
       return fetch(
         `${config.baseURL}/api/users/register`,
         {
