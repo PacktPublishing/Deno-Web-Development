@@ -1,5 +1,5 @@
 import { Museum } from "../museums/index.ts";
-import { RegisterPayload, LoginPayload, UserDto } from "../users/index.ts";
+import { LoginPayload, RegisterPayload, UserDto } from "../users/index.ts";
 
 interface Config {
   baseURL: string;

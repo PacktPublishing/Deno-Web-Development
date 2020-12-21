@@ -8,7 +8,7 @@ import {
   Controller as UserController,
   Repository as UserRepository,
 } from "./users/index.ts";
-import { AuthRepository, Algorithm } from "./deps.ts";
+import { Algorithm, AuthRepository } from "./deps.ts";
 
 const museumRepository = new MuseumRepository();
 const museumController = new MuseumController({ museumRepository });

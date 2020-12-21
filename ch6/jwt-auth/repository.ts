@@ -1,4 +1,4 @@
-import { makeJwt, setExpiration, Jose, Payload, Algorithm } from "./deps.ts";
+import { Algorithm, Jose, makeJwt, Payload, setExpiration } from "./deps.ts";
 import { AuthRepository, Configuration } from "./types.ts";
 
 export type RepositoryDependencies = { configuration: Configuration };

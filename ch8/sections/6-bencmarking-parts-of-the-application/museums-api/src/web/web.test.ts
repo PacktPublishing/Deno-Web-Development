@@ -1,7 +1,5 @@
 import { t } from "../deps.ts";
-import {
-  Controller as UserController,
-} from "../users/index.ts";
+import { Controller as UserController } from "../users/index.ts";
 import { Controller as MuseumController } from "../museums/index.ts";
 import { createServer } from "./index.ts";
 

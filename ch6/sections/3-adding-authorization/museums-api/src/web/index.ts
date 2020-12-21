@@ -1,5 +1,5 @@
 import { MuseumController } from "../museums/index.ts";
-import { Application, Router, jwtMiddleware } from "../deps.ts";
+import { Application, jwtMiddleware, Router } from "../deps.ts";
 import { UserController } from "../users/types.ts";
 import { Algorithm } from "../deps.ts";
 

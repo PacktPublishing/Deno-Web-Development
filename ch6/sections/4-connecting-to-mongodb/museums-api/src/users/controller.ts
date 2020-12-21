@@ -1,10 +1,10 @@
 import { userToDto } from "./adapter.ts";
 import {
+  LoginPayload,
   RegisterPayload,
+  User,
   UserController,
   UserRepository,
-  LoginPayload,
-  User,
 } from "./types.ts";
 import { generateSalt, hashWithSalt } from "./util.ts";
 import { AuthRepository } from "../deps.ts";

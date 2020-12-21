@@ -1,8 +1,8 @@
 import {
-  assertEquals,
   assert,
-  assertThrowsAsync,
+  assertEquals,
   assertThrows,
+  assertThrowsAsync,
 } from "https://deno.land/std@0.73.0/testing/asserts.ts";
 import { Controller } from "./controller.ts";
 import { Repository as InMemoryRepository } from "./repository/inMemory.ts";

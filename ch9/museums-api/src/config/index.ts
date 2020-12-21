@@ -1,4 +1,4 @@
-import { parse, Algorithm } from "../deps.ts";
+import { Algorithm, parse } from "../deps.ts";
 
 type Configuration = {
   web: {
