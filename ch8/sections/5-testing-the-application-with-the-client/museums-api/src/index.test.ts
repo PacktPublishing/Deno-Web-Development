@@ -1,4 +1,4 @@
-import { t, AuthRepository, Algorithm } from "./deps.ts";
+import { Algorithm, AuthRepository, t } from "./deps.ts";
 import { createServer } from "./web/index.ts";
 import {
   Controller as MuseumController,

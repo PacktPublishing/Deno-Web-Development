@@ -1,6 +1,6 @@
 import { Algorithm } from "./deps.ts";
 
-export { Algorithm };
+export type { Algorithm };
 
 export type Configuration = {
   key: string;

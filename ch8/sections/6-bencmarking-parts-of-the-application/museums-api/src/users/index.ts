@@ -2,10 +2,10 @@ export { Repository } from "./repository/mongoDb.ts";
 export { Repository as InMemoryRepository } from "./repository/inMemory.ts";
 export { Controller } from "./controller.ts";
 
-export {
-  UserRepository,
+export type {
   LoginPayload,
   RegisterPayload,
-  UserDto,
   User,
+  UserDto,
+  UserRepository,
 } from "./types.ts";

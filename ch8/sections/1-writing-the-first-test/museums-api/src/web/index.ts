@@ -128,16 +128,16 @@ apiRouter.get("/client.js", async (ctx) => {
     ctx.response.body = "Hello World!";
   });
 
-const controller = new AbortController();
-const { signal } = controller;
+  const controller = new AbortController();
+  const { signal } = controller;
 
-app.listen({
-  port,
-  secure,
-  keyFile,
-  certFile,
-  signal,
-});
+  app.listen({
+    port,
+    secure,
+    keyFile,
+    certFile,
+    signal,
+  });
 
-return { app, controller };
+  return { app, controller };
 }
