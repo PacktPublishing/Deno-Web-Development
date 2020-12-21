@@ -1,9 +1,12 @@
 import { Museum } from "../museums/index.ts";
-import { RegisterPayload, LoginPayload, UserDto } from "../users/index.ts";
+import { LoginPayload, RegisterPayload, UserDto } from "../users/index.ts";
 
 interface Config {
   baseURL: string;
 }
+
+const jsonHeaders = new Headers();
+jsonHeaders.set("content-type", "application/json");
 
 export function getClient(config: Config) {
   let token: string | null = null;
@@ -16,6 +19,7 @@ export function getClient(config: Config) {
         {
           body: JSON.stringify({ username, password }),
           method: "POST",
+          headers: jsonHeaders,
         },
       ).then((r) => r.json());
     },
@@ -26,6 +30,7 @@ export function getClient(config: Config) {
         `${config.baseURL}/api/login`,
         {
           body: JSON.stringify({ username, password }),
+          headers: jsonHeaders,
           method: "POST",
         },
       ).then((response) => {
@@ -36,7 +41,6 @@ export function getClient(config: Config) {
         throw response.json();
       })
         .then((response) => {
-          console.log("set the token with", response.token);
           token = response.token;
 
           return response;
@@ -46,17 +50,11 @@ export function getClient(config: Config) {
       const authenticatedHeaders = new Headers();
       authenticatedHeaders.set("authorization", `Bearer ${token}`);
       return fetch(
-        `${config.baseURL}/api/museums`,
+        `${config.baseURL}/api/users/register`,
         {
           headers: authenticatedHeaders,
         },
-      ).then(async (response) => {
-        if (response.status < 300) {
-          return response.json();
-        }
-
-        throw response.text();
-      });
+      ).then((r) => r.json());
     },
   };
 }

@@ -66,8 +66,10 @@ Deno.test("registers", async () => {
     user: {
       register: async () => {
         return {
-          createdAt: now,
-          username: "abcde",
+          user: {
+            createdAt: now,
+            username: "abcde",
+          },
         };
       },
     },
@@ -101,9 +103,9 @@ Deno.test("throws on invalid jwt token", async () => {
     await client.getMuseums();
   } catch (e) {
     assert(e, "it throws");
+  } finally {
+    server.controller.abort();
   }
-
-  server.controller.abort();
 });
 
 Deno.test("works with valid jwt token", async () => {

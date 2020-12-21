@@ -1,10 +1,10 @@
-import { userToDto } from "./adapter.ts";
+import { userToUserDto } from "./adapter.ts";
 import {
+  LoginPayload,
   RegisterPayload,
+  User,
   UserController,
   UserRepository,
-  LoginPayload,
-  User,
 } from "./types.ts";
 import { hashWithSalt } from "./util.ts";
 import { AuthRepository } from "../deps.ts";
@@ -43,7 +43,7 @@ export class Controller implements UserController {
       payload.password,
     );
 
-    return userToDto(createdUser);
+    return userToUserDto(createdUser);
   }
 
   public async login(payload: LoginPayload) {
@@ -54,7 +54,7 @@ export class Controller implements UserController {
 
       const token = await this.authRepository.generateToken(user.username);
 
-      return { user: userToDto(user), token };
+      return { user: userToUserDto(user), token };
     } catch (e) {
       throw new Error("Username and password combination is not correct");
     }

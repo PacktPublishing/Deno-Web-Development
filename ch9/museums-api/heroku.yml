@@ -1,3 +1,5 @@
 build:
   docker:
     web: Dockerfile
+run:
+  web: deno run --allow-net --unstable --allow-env --allow-read --allow-write --allow-plugin src/index.ts

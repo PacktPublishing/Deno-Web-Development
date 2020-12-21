@@ -1,6 +1,6 @@
 import { User, UserDto } from "./types.ts";
 
-export const userToDto = (user: User): UserDto => {
+export const userToUserDto = (user: User): UserDto => {
   return {
     username: user.username,
     createdAt: user.createdAt,

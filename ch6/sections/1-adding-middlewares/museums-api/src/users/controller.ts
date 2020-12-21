@@ -1,4 +1,4 @@
-import { userToDto } from "./adapter.ts";
+import { userToUserDto } from "./adapter.ts";
 import { RegisterPayload, UserController, UserRepository } from "./types.ts";
 
 interface ControllerDependencies {
@@ -22,6 +22,6 @@ export class Controller implements UserController {
       payload.password,
     );
 
-    return userToDto(createdUser);
+    return userToUserDto(createdUser);
   }
 }

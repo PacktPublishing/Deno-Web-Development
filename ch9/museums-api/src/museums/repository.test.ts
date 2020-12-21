@@ -1,6 +1,4 @@
-import {
-  assertEquals,
-} from "https://deno.land/std@0.73.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.73.0/testing/asserts.ts";
 import { Repository } from "./repository.ts";
 
 Deno.test("it should start with an empty data source", async () => {

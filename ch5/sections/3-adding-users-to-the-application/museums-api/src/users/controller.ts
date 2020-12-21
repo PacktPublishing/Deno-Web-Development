@@ -1,4 +1,4 @@
-import { userToDto } from "./adapter.ts";
+import { userToUserDto } from "./adapter.ts";
 import { RegisterPayload, UserController, UserRepository } from "./types.ts";
 import { generateSalt, hashWithSalt } from "./util.ts";
 
@@ -33,6 +33,6 @@ export class Controller implements UserController {
       await this.getHashedUser(payload.username, payload.password),
     );
 
-    return userToDto(createdUser);
+    return userToUserDto(createdUser);
   }
 }

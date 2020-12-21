@@ -1,5 +1,5 @@
 import { MuseumController } from "../museums/index.ts";
-import { Application, Router, jwtMiddleware } from "../deps.ts";
+import { Application, jwtMiddleware, Router } from "../deps.ts";
 import { UserController } from "../users/types.ts";
 import { Algorithm, oakCors } from "../deps.ts";
 
@@ -62,20 +62,20 @@ export async function createServer({
 
   const apiRouter = new Router({ prefix: "/api" });
 
-apiRouter.get("/client.js", async (ctx) => {
-  const [diagnostics, bundle] = await Deno.bundle(
-    "./src/web/client.ts",
-  ) as string[];
+  apiRouter.get("/client.js", async (ctx) => {
+    const [diagnostics, bundle] = await Deno.bundle(
+      "./src/web/client.ts",
+    ) as string[];
 
-  if (!diagnostics) {
-    ctx.response.type = "application/javascript";
-    ctx.response.body = bundle;
+    if (!diagnostics) {
+      ctx.response.type = "application/javascript";
+      ctx.response.body = bundle;
 
-    return;
-  }
+      return;
+    }
 
-  console.error(diagnostics);
-});
+    console.error(diagnostics);
+  });
 
   const authenticated = jwtMiddleware(
     { algorithm: authorization.algorithm, key: authorization.key },
@@ -128,16 +128,16 @@ apiRouter.get("/client.js", async (ctx) => {
     ctx.response.body = "Hello World!";
   });
 
-const controller = new AbortController();
-const { signal } = controller;
+  const controller = new AbortController();
+  const { signal } = controller;
 
-app.listen({
-  port,
-  secure,
-  keyFile,
-  certFile,
-  signal,
-});
+  app.listen({
+    port,
+    secure,
+    keyFile,
+    certFile,
+    signal,
+  });
 
-return { app, controller };
+  return { app, controller };
 }

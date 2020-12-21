@@ -1,4 +1,4 @@
-import { MongoClient, Database } from "./deps.ts";
+import { Database, MongoClient } from "./deps.ts";
 import { createServer } from "./web/index.ts";
 import {
   Controller as MuseumController,
@@ -9,7 +9,7 @@ import {
   Controller as UserController,
   Repository as UserRepository,
 } from "./users/index.ts";
-import { AuthRepository, Algorithm } from "./deps.ts";
+import { Algorithm, AuthRepository } from "./deps.ts";
 
 const client = new MongoClient();
 client.connectWithUri("mongodb+srv://<connection URI>");

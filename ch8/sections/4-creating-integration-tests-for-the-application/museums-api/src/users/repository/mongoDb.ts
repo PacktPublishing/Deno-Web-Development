@@ -1,5 +1,5 @@
 import { CreateUser, User, UserRepository } from "../types.ts";
-import { Database, Collection } from "../../deps.ts";
+import { Collection, Database } from "../../deps.ts";
 
 interface RepositoryDependencies {
   storage: Database;

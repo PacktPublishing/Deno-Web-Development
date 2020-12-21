@@ -28,12 +28,14 @@ const authConfiguration = {
   key: config.jwt.key,
   tokenExpirationInSeconds: config.jwt.expirationTime,
 };
-const authRepository = new AuthRepository({ configuration: authConfiguration });
+const authRepository = new AuthRepository({
+  configuration: authConfiguration,
+});
 
 const userRepository = new UserRepository({ storage: db });
 const userController = new UserController({ userRepository, authRepository });
 
-museumRepository.loadFixtures([{
+museumRepository.storage.set("fixture-1", {
   id: "fixture-1",
   name: "Most beautiful museum in the world",
   description: "One I really like",
@@ -41,7 +43,7 @@ museumRepository.loadFixtures([{
     lat: "12345",
     lng: "54321",
   },
-}]);
+});
 
 createServer({
   configuration: {

@@ -1,11 +1,15 @@
 export { serve } from "https://deno.land/std@0.72.0/http/server.ts";
 export { Application, Router } from "https://deno.land/x/oak@v6.3.1/mod.ts";
-export {
-  Repository as AuthRepository,
+export type {
   Algorithm,
 } from "https://raw.githubusercontent.com/PacktPublishing/Deno-Web-Development/master/ch6/jwt-auth/mod.ts";
 export {
-  jwtMiddleware,
+  Repository as AuthRepository,
+} from "https://raw.githubusercontent.com/PacktPublishing/Deno-Web-Development/master/ch6/jwt-auth/mod.ts";
+export type {
   OnFailureHandler,
   OnSuccessHandler,
-} from "https://x.nest.land/oak-middleware-jwt@1.0.0/mod.ts";
+} from "https://raw.githubusercontent.com/asantos00/oak-middleware-jwt/master/mod.ts";
+export {
+  jwtMiddleware,
+} from "https://raw.githubusercontent.com/asantos00/oak-middleware-jwt/master/mod.ts";

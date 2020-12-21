@@ -1,4 +1,7 @@
-import { bench, runBenchmarks } from "../deps.ts";
+import {
+  bench,
+  runBenchmarks,
+} from "https://deno.land/std@0.71.0/testing/bench.ts";
 import { generateSalt, hashWithSalt } from "./util.ts";
 
 bench({

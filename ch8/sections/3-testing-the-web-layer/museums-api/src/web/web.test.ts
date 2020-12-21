@@ -1,4 +1,4 @@
-import { AuthRepository, t, Database, Collection } from "../deps.ts";
+import { AuthRepository, Collection, Database, t } from "../deps.ts";
 import {
   Controller as UserController,
   Repository as UserRepository,

@@ -1,4 +1,4 @@
-import { AuthRepository, t, Database, Collection } from "../deps.ts";
+import { AuthRepository, Collection, Database, t } from "../deps.ts";
 import {
   Controller as UserController,
   Repository as UserRepository,
@@ -64,33 +64,4 @@ Deno.test("it responds to hello world", async () => {
   );
 
   server.controller.abort();
-});
-
-Deno.test("returns the user and a token on login", async () => {
-  const server = await createServer({
-    configuration: {
-      allowedOrigins: [],
-      authorization: {
-        algorithm: "HS256",
-        key: "abcd",
-      },
-      certFile: "abcd",
-      keyFile: "abcd",
-      port: 9001,
-      secure: false,
-    },
-    museum: {} as MuseumController,
-    user: new UserController({
-      authRepository: new AuthRepository({
-        configuration: {
-          algorithm: "HS256",
-          key: "key",
-          tokenExpirationInSeconds: 120,
-        },
-      }),
-      userRepository: new UserRepository({
-        storage: mockMongoDatabase,
-      }),
-    }),
-  });
 });
