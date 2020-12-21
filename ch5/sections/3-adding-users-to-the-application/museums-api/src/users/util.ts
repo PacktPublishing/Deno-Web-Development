@@ -1,9 +1,9 @@
 import { encodeToString } from "https://deno.land/std@0.71.0/encoding/hex.ts";
 import { createHash } from "https://deno.land/std@0.67.0/hash/mod.ts";
 
-export const hashWithSalt = (password: string, salt: string) => {
+export const hashWithSalt = (text: string, salt: string) => {
   const hash = createHash("sha512")
-    .update(`${password}${salt}`)
+    .update(`${text}${salt}`)
     .toString();
 
   return hash;
