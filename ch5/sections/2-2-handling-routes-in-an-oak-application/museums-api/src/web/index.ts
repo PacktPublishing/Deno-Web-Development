@@ -1,7 +1,6 @@
 import { serve } from "https://deno.land/std/http/server.ts";
 import { MuseumController } from "../museums/index.ts";
-import { Application } from "../deps.ts";
-import { Router } from "https://deno.land/x/oak@v6.3.0/router.ts";
+import { Application, Router } from "../deps.ts";
 
 interface CreateServerDependencies {
   configuration: {

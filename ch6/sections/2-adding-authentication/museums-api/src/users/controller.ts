@@ -1,4 +1,4 @@
-import { userToDto } from "./adapter.ts";
+import { userToUserDto } from "./adapter.ts";
 import {
   LoginPayload,
   RegisterPayload,
@@ -39,7 +39,7 @@ export class Controller implements UserController {
       payload.password,
     );
 
-    return userToDto(createdUser);
+    return userToUserDto(createdUser);
   }
 
   public async login(payload: LoginPayload) {
@@ -48,7 +48,7 @@ export class Controller implements UserController {
 
       await this.comparePassword(payload.password, user);
 
-      return { user: userToDto(user) };
+      return { user: userToUserDto(user) };
     } catch (e) {
       throw new Error("Username and password combination is not correct");
     }
