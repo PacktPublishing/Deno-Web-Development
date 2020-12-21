@@ -12,8 +12,8 @@ export class Repository implements MuseumRepository {
   }
 
   async loadFixtures(museums: Museum[]) {
-    museums.forEach((m) => {
-      this.storage.set(m.id, m);
+    museums.forEach((museum) => {
+      this.storage.set(museum.id, museum);
     });
   }
 }

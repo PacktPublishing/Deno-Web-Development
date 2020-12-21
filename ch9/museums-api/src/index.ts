@@ -12,7 +12,7 @@ import {
 import { AuthRepository } from "./deps.ts";
 import { load as loadConfiguration } from "./config/index.ts";
 
-const config = await loadConfiguration(Deno.env.get("DENO_ENV"));
+const config = await loadConfiguration();
 
 const client = new MongoClient();
 client.connectWithUri(
