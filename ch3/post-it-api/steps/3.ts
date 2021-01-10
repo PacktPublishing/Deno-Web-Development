@@ -1,12 +1,13 @@
-import { serve } from "https://deno.land/std/http/server.ts";
+import { serve } from "https://deno.land/std@0.83.0/http/server.ts";
 
 const PORT = 8080;
-const HOST = "http://0.0.0.0";
-const server = serve(`:${PORT}`);
+const HOST = "localhost";
+const PROTOCOL = "http";
+const server = serve({ port: PORT, hostname: HOST });
 
 console.log(`Server running at ${HOST}:${PORT}`);
-for await (let req of server) {
-  const url = new URL(`${HOST}${req.url}`);
+for await (const req of server) {
+  const url = new URL(`${PROTOCOL}://${HOST}${req.url}`);
 
   const pathWithMethod = `${req.method} ${url.pathname}`;
   switch (pathWithMethod) {

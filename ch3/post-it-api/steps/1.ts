@@ -1,9 +1,9 @@
-import { serve } from "https://deno.land/std/http/server.ts";
+import { serve } from "https://deno.land/std@0.83.0/http/server.ts";
 
 const PORT = 8080;
-const server = serve(`:${PORT}`);
+const server = serve({ port: PORT });
 
 console.log("Server running at port", PORT);
-for await (let req of server) {
+for await (const req of server) {
   req.respond({ body: "post-it api", status: 200 });
 }

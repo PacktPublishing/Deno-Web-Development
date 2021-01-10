@@ -1,23 +1,24 @@
-import { serve } from "https://deno.land/std/http/server.ts";
+import { serve } from "https://deno.land/std@0.83.0/http/server.ts";
 
 const PORT = 8080;
-const HOST = "http://0.0.0.0";
-const server = serve(`:${PORT}`);
+const HOST = "localhost";
+const PROTOCOL = "http";
+const server = serve({ port: PORT, hostname: HOST });
 
 /**
  * Will work as an in-memory DB to save our postIts
  */
-let postIts: Record<string, PostIt> = {
-  "random-uuid-1": {
+const postIts: Record<PostIt["id"], PostIt> = {
+  "3209ebc7-b3b4-4555-88b1-b64b33d507ab": {
     title: "Read more",
     body: "PacktPub books",
-    id: "random-uuid-1",
+    id: "3209ebc7-b3b4-4555-88b1-b64b33d507ab",
     createdAt: new Date(),
   },
-  "random-uuid-2": {
+  "a1afee4a-b078-4eff-8ca6-06b3722eee2c": {
     title: "Finish book",
     body: "Deno Web Development",
-    id: "random-uuid-2",
+    id: "a1afee4a-b078-4eff-8ca6-06b3722eee2c",
     createdAt: new Date(),
   },
 };
@@ -32,8 +33,8 @@ interface PostIt {
 }
 
 console.log(`Server running at ${HOST}:${PORT}`);
-for await (let req of server) {
-  const url = new URL(`${HOST}${req.url}`);
+for await (const req of server) {
+  const url = new URL(`${PROTOCOL}://${HOST}${req.url}`);
   const headers = new Headers();
   headers.set("content-type", "application/json");
 
