@@ -1,5 +1,5 @@
-import { serve } from "https://deno.land/std/http/server.ts";
-import { MuseumController } from "../museums/index.ts";
+import { serve } from "https://deno.land/std@0.83.0/http/server.ts";
+import type { MuseumController } from "../museums/index.ts";
 
 interface CreateServerDependencies {
   configuration: {
@@ -14,7 +14,7 @@ export async function createServer({
   },
   museum,
 }: CreateServerDependencies) {
-  const server = serve(`:${port}`);
+  const server = serve({ port });
 
   console.log(`Server running at http://localhost:${port}`);
   for await (let req of server) {
