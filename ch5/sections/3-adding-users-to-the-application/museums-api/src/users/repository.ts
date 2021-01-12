@@ -1,7 +1,7 @@
-import { CreateUser, User, UserRepository } from "./types.ts";
+import type { CreateUser, User, UserRepository } from "./index.ts";
 
 export class Repository implements UserRepository {
-  private storage = new Map<string, User>();
+  private storage = new Map<User["username"], User>();
 
   async create(user: CreateUser) {
     const userWithCreatedAt = { ...user, createdAt: new Date() };

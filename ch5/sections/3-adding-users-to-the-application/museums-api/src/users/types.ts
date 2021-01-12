@@ -6,7 +6,7 @@ export type User = {
 };
 
 export type UserDto = Pick<User, "createdAt" | "username">;
-export type CreateUser = Omit<User, "createdAt">;
+export type CreateUser = Pick<User, "username" | "hash" | "salt">;
 
 export interface UserRepository {
   create: (user: CreateUser) => Promise<User>;

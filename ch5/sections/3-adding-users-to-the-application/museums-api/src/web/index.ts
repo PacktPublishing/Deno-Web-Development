@@ -1,6 +1,6 @@
-import { MuseumController } from "../museums/index.ts";
+import type { MuseumController } from "../museums/index.ts";
 import { Application, Router } from "../deps.ts";
-import { UserController } from "../users/types.ts";
+import type { UserController } from "../users/index.ts";
 
 interface CreateServerDependencies {
   configuration: {

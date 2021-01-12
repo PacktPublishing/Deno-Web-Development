@@ -1,4 +1,4 @@
-import { MuseumController, MuseumRepository } from "./types.ts";
+import type { MuseumController, MuseumRepository } from "./types.ts";
 
 interface ControllerDependencies {
   museumRepository: MuseumRepository;

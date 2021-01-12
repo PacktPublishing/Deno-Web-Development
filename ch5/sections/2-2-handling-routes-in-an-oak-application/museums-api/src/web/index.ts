@@ -1,4 +1,3 @@
-import { serve } from "https://deno.land/std/http/server.ts";
 import { MuseumController } from "../museums/index.ts";
 import { Application, Router } from "../deps.ts";
 
