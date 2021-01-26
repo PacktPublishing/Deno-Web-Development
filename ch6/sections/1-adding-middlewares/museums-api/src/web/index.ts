@@ -1,5 +1,5 @@
 import { MuseumController } from "../museums/index.ts";
-import { Application, Router } from "../deps.ts";
+import { Application, Router, RouterMiddleware } from "../deps.ts";
 import { UserController } from "../users/types.ts";
 
 interface CreateServerDependencies {
@@ -9,6 +9,11 @@ interface CreateServerDependencies {
   museum: MuseumController;
   user: UserController;
 }
+
+const addTestHeaderMiddleware: RouterMiddleware = async (ctx, next) => {
+  ctx.response.headers.set("X-Test", "true");
+  await next();
+};
 
 export async function createServer({
   configuration: {
@@ -43,7 +48,7 @@ export async function createServer({
 
   const apiRouter = new Router({ prefix: "/api" });
 
-  apiRouter.get("/museums", async (ctx) => {
+  apiRouter.get("/museums", addTestHeaderMiddleware, async (ctx) => {
     ctx.response.body = {
       museums: await museum.getAll(),
     };
