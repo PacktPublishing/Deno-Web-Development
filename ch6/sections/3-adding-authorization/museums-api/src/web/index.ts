@@ -1,7 +1,6 @@
 import { MuseumController } from "../museums/index.ts";
-import { Application, jwtMiddleware, Router } from "../deps.ts";
+import { Algorithm, Application, jwtMiddleware, Router } from "../deps.ts";
 import { UserController } from "../users/types.ts";
-import { Algorithm } from "../deps.ts";
 
 interface CreateServerDependencies {
   configuration: {
@@ -49,9 +48,7 @@ export async function createServer({
 
   const apiRouter = new Router({ prefix: "/api" });
 
-  const authenticated = jwtMiddleware(
-    { algorithm: authorization.algorithm, key: authorization.key },
-  );
+  const authenticated = jwtMiddleware(authorization);
   apiRouter.get("/museums", authenticated, async (ctx) => {
     ctx.response.body = {
       museums: await museum.getAll(),
