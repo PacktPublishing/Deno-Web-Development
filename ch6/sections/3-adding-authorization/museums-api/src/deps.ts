@@ -6,10 +6,6 @@ export type {
 export {
   Repository as AuthRepository,
 } from "https://raw.githubusercontent.com/PacktPublishing/Deno-Web-Development/master/ch6/jwt-auth/mod.ts";
-export type {
-  OnFailureHandler,
-  OnSuccessHandler,
-} from "https://raw.githubusercontent.com/asantos00/oak-middleware-jwt/master/mod.ts";
 export {
   jwtMiddleware,
-} from "https://raw.githubusercontent.com/asantos00/oak-middleware-jwt/master/mod.ts";
+} from "https://x.nest.land/oak-middleware-jwt@2.0.0/mod.ts";
