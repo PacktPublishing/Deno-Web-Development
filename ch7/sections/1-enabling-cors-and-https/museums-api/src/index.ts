@@ -11,9 +11,11 @@ import {
 } from "./users/index.ts";
 import { Algorithm, AuthRepository } from "./deps.ts";
 
-// const client = new MongoClient();
-// client.connectWithUri("mongodb+srv://<connection URI>");
-// const db = client.database("getting-started-with-deno");
+const client = new MongoClient();
+client.connectWithUri(
+  "mongodb+srv://<connection URI>",
+);
+const db = client.database("getting-started-with-deno");
 
 const museumRepository = new MuseumRepository();
 const museumController = new MuseumController({ museumRepository });
@@ -27,16 +29,17 @@ const authRepository = new AuthRepository({
   configuration: authConfiguration,
 });
 
-const userRepository = new UserRepository();
+const userRepository = new UserRepository({ storage: db });
 const userController = new UserController({ userRepository, authRepository });
 
-museumRepository.storage.set("fixture-1", {
-  id: "fixture-1",
-  name: "Most beautiful museum in the world",
-  description: "One I really like",
+museumRepository.storage.set("1fbdd2a9-1b97-46e0-b450-62819e5772ff", {
+  id: "1fbdd2a9-1b97-46e0-b450-62819e5772ff",
+  name: "The Louvre",
+  description:
+    "The world’s largest art museum and a historic monument in Paris, France.",
   location: {
-    lat: "12345",
-    lng: "54321",
+    lat: "48.860294",
+    lng: "2.33862",
   },
 });
 
