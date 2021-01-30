@@ -1,4 +1,4 @@
-import { CreateUser, User, UserRepository } from "../types.ts";
+import type { CreateUser, User, UserRepository } from "../types.ts";
 
 export class Repository implements UserRepository {
   storage = new Map<string, User>();

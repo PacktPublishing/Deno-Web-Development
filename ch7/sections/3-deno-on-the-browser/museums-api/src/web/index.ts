@@ -1,6 +1,6 @@
 import { MuseumController } from "../museums/index.ts";
 import { Application, jwtMiddleware, Router } from "../deps.ts";
-import { UserController } from "../users/types.ts";
+import type { UserController } from "../users/types.ts";
 import { Algorithm, oakCors } from "../deps.ts";
 
 interface CreateServerDependencies {

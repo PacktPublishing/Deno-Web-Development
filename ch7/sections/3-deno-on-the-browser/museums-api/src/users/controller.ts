@@ -1,5 +1,5 @@
 import { userToUserDto } from "./adapter.ts";
-import {
+import type {
   LoginPayload,
   RegisterPayload,
   User,
@@ -7,7 +7,7 @@ import {
   UserRepository,
 } from "./types.ts";
 import { generateSalt, hashWithSalt } from "./util.ts";
-import { AuthRepository } from "../deps.ts";
+import type { AuthRepository } from "../deps.ts";
 
 interface ControllerDependencies {
   userRepository: UserRepository;

@@ -1,4 +1,4 @@
-import { Museum, MuseumRepository } from "./types.ts";
+import type { Museum, MuseumRepository } from "./types.ts";
 
 export class Repository implements MuseumRepository {
   storage = new Map<string, Museum>();

@@ -1,4 +1,4 @@
-import { CreateUser, User, UserRepository } from "../types.ts";
+import type { CreateUser, User, UserRepository } from "../types.ts";
 import { Collection, Database } from "../../deps.ts";
 
 interface RepositoryDependencies {
