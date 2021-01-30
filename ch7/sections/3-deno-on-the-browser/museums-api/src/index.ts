@@ -54,7 +54,7 @@ createServer({
       algorithm: authConfiguration.algorithm,
     },
     allowedOrigins: config.cors.allowedOrigins,
-    secure: false,
+    secure: true,
     certFile: config.https.certificate,
     keyFile: config.https.key,
   },

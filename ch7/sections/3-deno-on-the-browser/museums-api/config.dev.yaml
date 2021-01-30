@@ -2,7 +2,7 @@ web:
   port: 8080
 cors:
   allowedOrigins:
-    - http://localhost:3000
+    - https://localhost:3000
 https:
   key: ./key.pem
   certificate: ./certificate.pem
