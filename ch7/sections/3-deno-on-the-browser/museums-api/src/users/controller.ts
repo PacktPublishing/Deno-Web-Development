@@ -66,7 +66,6 @@ export class Controller implements UserController {
 
       return { user: userToUserDto(user), token };
     } catch (e) {
-      console.log(e);
       throw new Error("Username and password combination is not correct");
     }
   }

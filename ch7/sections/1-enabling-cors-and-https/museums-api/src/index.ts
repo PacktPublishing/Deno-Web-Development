@@ -13,7 +13,7 @@ import { Algorithm, AuthRepository } from "./deps.ts";
 
 const client = new MongoClient();
 client.connectWithUri(
-  "mongodb+srv://<connection URI>",
+  "mongodb+srv://deno-api:Hdxmy68qbWCrRlqR@deno-cluster.wtit0.mongodb.net/?retryWrites=true&w=majority",
 );
 const db = client.database("getting-started-with-deno");
 
