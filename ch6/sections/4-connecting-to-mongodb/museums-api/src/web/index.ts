@@ -68,10 +68,15 @@ export async function createServer({
       return;
     }
 
-    const createdUser = await user.register({ username, password });
+    try {
+      const createdUser = await user.register({ username, password });
 
-    ctx.response.status = 201;
-    ctx.response.body = { user: createdUser };
+      ctx.response.status = 201;
+      ctx.response.body = { user: createdUser };
+    } catch (e) {
+      ctx.response.status = 400;
+      ctx.response.body = { message: e.message };
+    }
   });
 
   apiRouter.post("/login", async (ctx) => {

@@ -26,6 +26,10 @@ export class Repository implements UserRepository {
   async getByUsername(username: string) {
     const user = await this.storage.findOne({ username });
 
-    return user || Promise.reject(new Error("User not found"));
+    if (!user) {
+      throw new Error("User not found");
+    }
+
+    return user;
   }
 }
