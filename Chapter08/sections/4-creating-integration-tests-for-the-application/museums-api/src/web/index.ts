@@ -3,7 +3,7 @@ import { Application, jwtMiddleware, Router } from "../deps.ts";
 import { UserController } from "../users/types.ts";
 import { Algorithm, oakCors } from "../deps.ts";
 
-interface CreateServerDependencies {
+export interface CreateServerDependencies {
   configuration: {
     port: number;
     authorization: {
