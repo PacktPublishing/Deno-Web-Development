@@ -35,13 +35,14 @@ const authRepository = new AuthRepository({
 const userRepository = new UserRepository({ storage: db });
 const userController = new UserController({ userRepository, authRepository });
 
-museumRepository.storage.set("fixture-1", {
-  id: "fixture-1",
-  name: "Most beautiful museum in the world",
-  description: "One I really like",
+museumRepository.storage.set("1fbdd2a9-1b97-46e0-b450-62819e5772ff", {
+  id: "1fbdd2a9-1b97-46e0-b450-62819e5772ff",
+  name: "The Louvre",
+  description:
+    "The world’s largest art museum and a historic monument in Paris, France.",
   location: {
-    lat: "12345",
-    lng: "54321",
+    lat: "48.860294",
+    lng: "2.33862",
   },
 });
 

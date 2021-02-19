@@ -1,12 +1,9 @@
-import {
-  assert,
-  assertEquals,
-} from "https://deno.land/std@0.73.0/testing/asserts.ts";
+import { t } from "../deps.ts";
 import { AuthRepository } from "../deps.ts";
-import { getClient } from "./client.ts";
-import { createServer } from "./index.ts";
+import { getClient } from "../client/index.ts";
+import { createServer, CreateServerDependencies } from "./index.ts";
 
-const createTestServer = (options: any = {}) => {
+const createTestServer = (options?: CreateServerDependencies) => {
   return createServer({
     configuration: {
       allowedOrigins: [],
@@ -54,9 +51,9 @@ Deno.test("logs in", async () => {
   const client = getClient({ baseURL: "http://localhost:8787" });
 
   const response = await client.login({ username: "abcd", password: "abcd" });
-  assertEquals(response.token, "my-token", "token is right");
-  assertEquals(response.user.createdAt, now, "createdAt it right");
-  assertEquals(response.user.username, "abcde", "username it right");
+  t.assertEquals(response.token, "my-token", "token is right");
+  t.assertEquals(response.user.createdAt, now, "createdAt it right");
+  t.assertEquals(response.user.username, "abcde", "username it right");
 
   server.controller.abort();
 });
@@ -81,8 +78,8 @@ Deno.test("registers", async () => {
   const response = await client.register(
     { username: "abcd", password: "abcd" },
   );
-  assertEquals(response.user.createdAt, now, "createdAt it right");
-  assertEquals(response.user.username, "abcde", "username it right");
+  t.assertEquals(response.user.createdAt, now, "createdAt it right");
+  t.assertEquals(response.user.username, "abcde", "username it right");
 
   server.controller.abort();
 });
@@ -102,7 +99,7 @@ Deno.test("throws on invalid jwt token", async () => {
   try {
     await client.getMuseums();
   } catch (e) {
-    assert(e, "it throws");
+    t.assert(e, "it throws");
   } finally {
     server.controller.abort();
   }
@@ -133,8 +130,8 @@ Deno.test("works with valid jwt token", async () => {
   await client.login({ username: "abcd", password: "yo" });
 
   const response = await client.getMuseums();
-  assertEquals(response.museums.length, 1);
-  assertEquals(response.museums[0].name, "test-museum");
+  t.assertEquals(response.museums.length, 1);
+  t.assertEquals(response.museums[0].name, "test-museum");
 
   server.controller.abort();
 });

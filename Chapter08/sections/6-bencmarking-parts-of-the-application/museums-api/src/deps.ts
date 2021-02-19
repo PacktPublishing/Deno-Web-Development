@@ -21,7 +21,4 @@ export {
 export { oakCors } from "https://deno.land/x/cors@v1.2.1/oakCors.ts";
 export { parse } from "https://deno.land/std@0.71.0/encoding/yaml.ts";
 export * as t from "https://deno.land/std@0.71.0/testing/asserts.ts";
-export {
-  bench,
-  runBenchmarks,
-} from "https://deno.land/std@0.71.0/testing/bench.ts";
+export * as benchmarks from "https://deno.land/std@0.71.0/testing/bench.ts";

@@ -9,6 +9,7 @@ import {
   InMemoryRepository as UserRepository,
 } from "./users/index.ts";
 import { getClient } from "./client/index.ts";
+import { CreateServerDependencies } from "./web/index.ts";
 
 function register(username: string, password: string) {
   const jsonHeaders = new Headers();
@@ -36,7 +37,7 @@ function login(username: string, password: string) {
   }).then((r) => r.json());
 }
 
-function createTestServer(options: any = {}) {
+function createTestServer(options?: CreateServerDependencies) {
   const museumRepository = new MuseumRepository();
   const museumController = new MuseumController({ museumRepository });
 
