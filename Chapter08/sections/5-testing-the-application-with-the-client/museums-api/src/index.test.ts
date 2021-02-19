@@ -8,7 +8,7 @@ import {
   Controller as UserController,
   InMemoryRepository as UserRepository,
 } from "./users/index.ts";
-import { getClient } from "./web/index.ts";
+import { getClient } from "./client/index.ts";
 
 function register(username: string, password: string) {
   const jsonHeaders = new Headers();

@@ -3,7 +3,7 @@ import { Application, jwtMiddleware, Router } from "../deps.ts";
 import { UserController } from "../users/types.ts";
 import { Algorithm, oakCors } from "../deps.ts";
 
-interface CreateServerDependencies {
+export interface CreateServerDependencies {
   configuration: {
     port: number;
     authorization: {
@@ -19,7 +19,6 @@ interface CreateServerDependencies {
   user: UserController;
 }
 
-export { getClient } from "./client.ts";
 export async function createServer({
   configuration: {
     port,
@@ -65,7 +64,7 @@ export async function createServer({
 
   apiRouter.get("/client.js", async (ctx) => {
     const [diagnostics, bundle] = await Deno.bundle(
-      "./src/web/client.ts",
+      "./src/client/index.ts",
     ) as string[];
 
     if (!diagnostics) {

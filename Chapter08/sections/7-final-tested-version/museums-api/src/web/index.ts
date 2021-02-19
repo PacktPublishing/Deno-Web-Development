@@ -19,7 +19,6 @@ interface CreateServerDependencies {
   user: UserController;
 }
 
-export { getClient } from "./client.ts";
 export async function createServer({
   configuration: {
     port,
@@ -65,7 +64,7 @@ export async function createServer({
 
   apiRouter.get("/client.js", async (ctx) => {
     const [diagnostics, bundle] = await Deno.bundle(
-      "./src/web/client.ts",
+      "./src/client/index.ts",
     ) as string[];
 
     if (!diagnostics) {

@@ -64,7 +64,7 @@ export async function createServer({
 
   apiRouter.get("/client.js", async (ctx) => {
     const [diagnostics, bundle] = await Deno.bundle(
-      "./src/web/client.ts",
+      "./src/client/index.ts",
     ) as string[];
 
     if (!diagnostics) {

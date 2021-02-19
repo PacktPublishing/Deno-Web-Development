@@ -1,12 +1,12 @@
-import { Museum } from "../museums/index.ts";
-import { LoginPayload, RegisterPayload, UserDto } from "../users/index.ts";
+import type { Museum } from "../museums/index.ts";
+import type { LoginPayload, RegisterPayload, UserDto } from "../users/types.ts";
 
 interface Config {
   baseURL: string;
 }
 
-const jsonHeaders = new Headers();
-jsonHeaders.set("content-type", "application/json");
+const headers = new Headers();
+headers.set("content-type", "application/json");
 
 export function getClient(config: Config) {
   let token: string | null = null;
@@ -17,7 +17,7 @@ export function getClient(config: Config) {
         {
           body: JSON.stringify({ username, password }),
           method: "POST",
-          headers: jsonHeaders,
+          headers,
         },
       ).then((r) => r.json());
     },
@@ -28,8 +28,8 @@ export function getClient(config: Config) {
         `${config.baseURL}/api/login`,
         {
           body: JSON.stringify({ username, password }),
-          headers: jsonHeaders,
           method: "POST",
+          headers,
         },
       ).then((response) => {
         if (response.status < 300) {
@@ -48,7 +48,7 @@ export function getClient(config: Config) {
       const authenticatedHeaders = new Headers();
       authenticatedHeaders.set("authorization", `Bearer ${token}`);
       return fetch(
-        `${config.baseURL}/api/users/register`,
+        `${config.baseURL}/api/museums`,
         {
           headers: authenticatedHeaders,
         },
