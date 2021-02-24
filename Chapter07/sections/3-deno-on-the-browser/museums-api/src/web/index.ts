@@ -65,7 +65,7 @@ export async function createServer({
   apiRouter.get("/client.js", async (ctx) => {
     const [diagnostics, bundle] = await Deno.bundle(
       "./src/client/index.ts",
-    ) as string[];
+    );
 
     if (!diagnostics) {
       ctx.response.type = "application/javascript";
