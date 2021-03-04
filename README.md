@@ -37,14 +37,14 @@ Being a true believer that great software only happens through collaboration, ow
 The book is composed of 10 chapters and 3 main sections. The sections are: Introduction to Deno, Building an application, Testing and Deploying. The chapters list and direct link to code is available below.
 
 1. What is deno?
-2. The toolchain (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch2/)
-3. Runtime and standard library (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch3/)
-4. Building a web application (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch4/)
-5. Adding users and migrating to oak (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch5/)
-6. Adding authentication and connecting to the database (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch6/)
-7. HTTPS, extracting configuration and Deno on the browser (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch7/)
-8. Testing - Unit and integration (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch8/)
-9. Deploying a Deno application (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch9/)
-10. What's next? (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/ch10/)
+2. The toolchain (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter02/)
+3. Runtime and standard library (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter03/)
+4. Building a web application (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter04/)
+5. Adding users and migrating to oak (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter05/)
+6. Adding authentication and connecting to the database (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter06/)
+7. HTTPS, extracting configuration and Deno on the browser (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter07/)
+8. Testing - Unit and integration (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter08/)
+9. Deploying a Deno application (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter09/)
+10. What's next? (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter10/)
 
 Chapter that have multiple iterations of the same application have inside a `sections` folder with copies of the application at each state. It should be possible to have access to the code at a certain point in chapter.
