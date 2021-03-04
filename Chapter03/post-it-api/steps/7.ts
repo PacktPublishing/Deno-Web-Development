@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.83.0/http/server.ts";
+import { resolve, fromFileUrl } from "https://deno.land/std@0.89.0/path/mod.ts";
 import { v4 } from "https://deno.land/std/uuid/mod.ts";
 
 const PORT = 8080;
@@ -43,7 +44,7 @@ for await (const req of server) {
   switch (pathWithMethod) {
     case "GET /": {
       const file = await Deno.readFile(
-        new URL("../index.html", import.meta.url).pathname,
+        resolve(fromFileUrl(import.meta.url), "..", "..", "./index.html")
       );
       const htmlHeaders = new Headers();
       htmlHeaders.set("content-type", "text/html");
