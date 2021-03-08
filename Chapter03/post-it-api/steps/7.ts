@@ -44,7 +44,7 @@ for await (const req of server) {
   switch (pathWithMethod) {
     case "GET /": {
       const file = await Deno.readFile(
-        resolve(fromFileUrl(import.meta.url), "..", "..", "./index.html")
+        resolve(fromFileUrl(import.meta.url), "..", "index.html")
       );
       const htmlHeaders = new Headers();
       htmlHeaders.set("content-type", "text/html");
