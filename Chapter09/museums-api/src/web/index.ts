@@ -69,18 +69,20 @@ export async function createServer({
   const apiRouter = new Router({ prefix: "/api" });
 
   apiRouter.get("/client.js", async (ctx) => {
-    const [diagnostics, bundle] = await Deno.bundle(
+    const {
+      diagnostics,
+      files,
+    } = await Deno.emit(
       "./src/client/index.ts",
-    ) as string[];
+      { bundle: "esm" },
+    );
 
-    if (!diagnostics) {
+    if (!diagnostics.length) {
       ctx.response.type = "application/javascript";
-      ctx.response.body = bundle;
+      ctx.response.body = files["deno:///bundle.js"];
 
       return;
     }
-
-    console.error(diagnostics);
   });
 
   const authenticated = jwtMiddleware(
@@ -96,7 +98,7 @@ export async function createServer({
     const { username, password } = await ctx.request.body({ type: "json" })
       .value;
 
-    if (!username && !password) {
+    if (!username || !password) {
       ctx.response.status = 400;
 
       return;

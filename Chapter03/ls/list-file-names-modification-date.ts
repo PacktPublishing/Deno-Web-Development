@@ -1,4 +1,5 @@
 import { join } from 'https://deno.land/std@0.89.0/path/mod.ts';
+
 const [path = "."] = Deno.args;
 
 for await (const dir of Deno.readDir(path)) {

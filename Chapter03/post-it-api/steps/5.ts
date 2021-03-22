@@ -48,7 +48,7 @@ for await (const req of server) {
         [],
       );
 
-      req.respond({ body: JSON.stringify({ postIts: allPostIts, headers }) });
+      req.respond({ body: JSON.stringify({ postIts: allPostIts}), headers });
       continue;
     }
     case "POST /api/post-its": {

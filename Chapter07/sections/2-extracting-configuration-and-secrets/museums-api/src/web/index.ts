@@ -75,7 +75,7 @@ export async function createServer({
     const { username, password } = await ctx.request.body({ type: "json" })
       .value;
 
-    if (!username && !password) {
+    if (!username || !password) {
       ctx.response.status = 400;
 
       return;
