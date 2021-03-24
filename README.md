@@ -1,21 +1,23 @@
-# Getting started with Deno (https://deno.land/)
+# Deno Web Development
 
-https://deno-web-development.com
+<a href="https://www.packtpub.com/in/web-development/getting-started-with-deno"><img src="https://www.packtpub.com/media/catalog/product/cache/4cdce5a811acc0d2926d7f857dceb83b/9/7/9781800205666-original_137.jpeg" alt="Book Name" height="256px" align="right"></a>
 
-Published by PacktPub
-Authored by Alexandre Portela dos Santos
+**Write, test, maintain, and deploy JavaScript and TypeScript web applications using Deno**
 
+## What is this book about?
+Deno is a JavaScript and TypeScript runtime with secure defaults and a great developer experience. With Deno Web Development, you’ll learn all about Deno’s primitives, its principles, and how you can use them to build real-world applications. The book is divided into three main sections: an introduction to Deno, building an API from scratch, and testing and deploying a Deno application.
 
-Write, test, maintain and deploy JavaScript and TypeScript applications using Deno.
+This book covers the following exciting features: 
+* Understand why you should use Deno
+* Get to grips with tooling and the Deno ecosystem
+* Build Deno web applications using existing Node.js knowledge and the newest ECMA Script 6 features
+* Explore the standard library and the benefit of Deno’s security model
+* Discover common practices and web frameworks to build a REST API in Deno
 
-Learn how to use Deno, the secure JavaScript and TypeScript runtime written in Rust, to write reliable web applications
-___
+If you feel this book is for you, get your [copy](https://www.amazon.com/dp/180020566X) today!
 
-This repository contains all the code snippets from the book, plus some more extensive examples and explanations. The chapter's list is available below.
-
-# The book
-
-This book targets developers who want to leverage their JavaScript and TypeScript skills in a secure, simple, and modern runtime, using it for web development. Node.js knowledge is not required but recommended. 
+<a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
+alt="https://www.packtpub.com/" border="5" /></a>
 
 ## Deno
 
@@ -26,11 +28,37 @@ As we transition in the second section of the book, the reader will start with a
 
 By the end of the read, the reader is comfortable in using Deno to create, maintain, and deploy secure and reliable web applications.
 
-## Author Bio
 
-Alexandre is a software engineer passionate about products and startups. For the last 8+ years he's been working together with multiple companies, using technology as an enabler for ideas and businesses. 
-With a big interest in education and getting people excited about technology, he makes sure he's always involved with people that are learning about it, being it via blog posts, books, open source contributions, or meetups. This is, by itself, a learning adventure that Alexandre loves to be a part of.
-Being a true believer that great software only happens through collaboration, ownership, and teams of great people, he strives to nurture those values in every project he works in.
+## Instructions and Navigations
+All of the code is organized into folders. For example, Chapter02.
+
+The code will look like the following:
+```
+const now = new Date();
+console.log(`${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`);
+
+```
+
+**Following is what you need for this book:**
+This book is for developers who want to leverage their JavaScript and TypeScript skills in a secure, simple, and modern runtime, using Deno for web app development. Beginner-level knowledge of Node.js is recommended but not required
+
+With the following software and hardware list you can run all code files present in the book (Chapter 1-10).
+
+### Software and Hardware List
+
+| Chapter  | Software required                   | OS required                        |
+| -------- | ------------------------------------| -----------------------------------|
+| 2-10        | Deno 1.7.5                           | Windows, Mac OS X, and Linux (Any) |
+
+
+### Related products <Other books you may enjoy>
+* Full-Stack React, TypeScript, and Node [[Packt]](https://www.packtpub.com/product/full-stack-react-typescript-and-node/9781839219931) [[Amazon]](https://www.amazon.com/dp/1839219939)
+
+* Node Cookbook - Fourth Edition [[Packt]](https://www.packtpub.com/product/node-cookbook-fourth-edition/9781838558758?utm_source=github&utm_medium=repository&utm_campaign=9781838558758) [[Amazon]](https://www.amazon.com/dp/1838558756)
+
+## Get to Know the Author
+**Alexandre Portela dos Santos**
+is a software engineer passionate about products and startups. For the last 8+ years he's been working together with multiple companies, using technology as an enabler for ideas and businesses. With a big interest in education and getting people excited about technology, he makes sure he's always involved with people that are learning about it, being it via blog posts, books, open-source contributions, or meetups. This is, by itself, a learning adventure that Alexandre loves to be a part of. Being a true believer that great software only happens through collaboration, ownership, and teams of great people, he strives to nurture those values in every project he works in.
 
 # Index
 
@@ -47,4 +75,5 @@ The book is composed of 10 chapters and 3 main sections. The sections are: Intro
 9. Deploying a Deno application (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter09/)
 10. What's next? (https://github.com/PacktPublishing/Deno-Web-Development/tree/master/Chapter10/)
 
-Chapter that have multiple iterations of the same application have inside a `sections` folder with copies of the application at each state. It should be possible to have access to the code at a certain point in chapter.
+Chapter that have multiple iterations of the same application have inside a `sections` folder with copies of the application at each state. It should be possible to have access to the code
+
