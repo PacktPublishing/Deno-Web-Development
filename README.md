@@ -77,3 +77,7 @@ The book is composed of 10 chapters and 3 main sections. The sections are: Intro
 
 Chapter that have multiple iterations of the same application have inside a `sections` folder with copies of the application at each state. It should be possible to have access to the code
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781800205666">https://packt.link/free-ebook/9781800205666 </a> </p>
